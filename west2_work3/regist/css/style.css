@@ -1,0 +1,123 @@
+@charset "utf-8";
+/**CSS Reset 开始**/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,
+big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,
+dl,dt,dd,ol,ul,li,fieldset,form,label,lagend,table,caption,tbody,tfoot,thead,tr,th,td,article,
+aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,
+summary,time,mark,audio,video{
+	border:0;
+	font-size:100%;
+	font:inherit;
+	vertical-align:baseline;
+	margin:0;
+	padding:0;
+}
+blockquote,q {quotes:none;}
+blockquote:before,blockquote:after,q:before {content:none;}
+table {border-collapse:collapse,border-spacing:0;}
+/**CSS Rest 结束**/
+
+/**公共样式开始**/
+body,th,td,button,input,select,textarea {font:12px/1.62 "Microsoft Yahei","Hiragino Sans GB","Helvetica Neue",Helvetica,tahoma,arial,Verdama,sans-serif;color: #333;}
+ol,ul {list-style:none;}
+img {border:0;vertical-align:middle;}
+a{text-decoration:none;outline:none;blr:expression(this.onFocus=this.blur());}
+h1{font-size:36px;}
+h2{font-size:30px;}
+h3{font-size:24px;}
+h4{font-size:18px;}
+h5{font-size:14px;}
+h6{font-size:12px;}
+.left, .l {float:left;}
+.right, .r {float:right;}
+.clearfix, .cf{*zoom:1}
+.clearfix:after, .cf:after {content:".";display: block; height: 0;clear: both;cisibility: hidden;}
+.clear, cl {clear : both;}
+/**公共样式结束**/
+
+/*登录界面样式开始*/
+.regist{
+	width: 650px;
+	height: 400px;
+	background: #333;
+	opacity:0.7;
+	border-radius: 15px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -170px 0 0 -350px;
+}
+.regist h4
+{
+	text-align:center;
+	font-size:30px;
+	color:#fff;
+}
+.registmain{
+	padding: 20px;
+	color:#666;
+	font-size:15px;
+}
+
+.registmain ul li {
+	margin-top: 15px;
+}
+.registmain ul li span{
+	padding: 20px;
+	color:#fff;
+	font-size:17px;
+}
+.registmain ul li p{
+	display:inline-block;
+	margin-left:10px;
+	width: 305px;
+	height: 40px;
+	text-align: left;
+	font-size:15px;
+	color:#fff;
+}
+#count
+{
+	display:inline-block;
+	width:100px;
+	height:4px;
+	margin-top:0px;
+	margin-left:125px;
+	font-size:8px;
+	color:#CDCDB4;
+}
+.registmain ul li input[type="text"], .registmain ul li input[type="password"]
+{
+	width: 150px;
+	height: 27px;
+	padding: 0 5px;
+	font-size: 20px;
+	border-radius:5px;
+	outline:none;
+}
+
+.verifyimg
+{
+	display:inline-block;
+	float: right;
+    margin-right: 120px;
+    width: 183px;
+    height: 28px;
+	
+}
+.registmain ul li input[type="button"]
+{
+	width: 150px;
+	height: 40px;
+	border: none;
+	background: #00497d;
+	color: #fff;
+	font-size: 20px;
+	margin-left: 216px;
+	cursor: pointer;
+	border-radius:5px;
+}
+.registmain ul li input[type="button"]:hover
+{
+	background: #015997;
+}

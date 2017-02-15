@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>首页 - ByBlog </title>
+    <meta name="keywords" content="ByBlog,markdown,thinkphp,博客系统,前端博客" />
+    <meta name="description" content="ByBlog,markdown,thinkphp,博客系统,前端博客" />
+    <include file = "./Public/Public_head_link"/>
+</head>
+<body>
+<include file = "./Public/Public_header"/>
+<div id="content" class="home-index container">
+    <div class="row pt-xlg">
+        <div class="col s12 m12 l9">
+            <volist name="data" id="vo">
+                <div class="a-list">
+                    <p class="f-24 mb-none">
+                        <a class="waves-effect waves-light" href="{:U('Home/Content/content/id/'.$vo['a_id'])}">{$vo.a_title}</a>
+                    </p>
+                    <p class="c-666">{$vo.a_remark}</p>
+                    <p class="c-999">20{$vo.a_time|date="y/m/d H:i",###}发表 &nbsp; 点击量：{$vo.a_hit}</p>
+                </div>
+            </volist>
+        </div>
+        <div class="col s12 m12 l3">
+            <div>
+                <volist name="count" id="vo2">
+                    <p class="f-18 m-none">{$vo2.a_time} （{$vo2.a_sum}）</p>
+                </volist>
+            </div>
+            <!-- 多说热评文章 start -->
+            <div class="ds-top-threads" data-range="daily" data-num-items="5"></div>
+            <!-- 多说热评文章 end -->
+            <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+            <script type="text/javascript">
+                var duoshuoQuery = {short_name:"weberpub"};
+                (function() {
+                    var ds = document.createElement('script');
+                    ds.type = 'text/javascript';ds.async = true;
+                    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+                    ds.charset = 'UTF-8';
+                    (document.getElementsByTagName('head')[0]
+                    || document.getElementsByTagName('body')[0]).appendChild(ds);
+                })();
+            </script>
+            <!-- 多说公共JS代码 end -->
+            <!-- 多说最新评论 start -->
+            <div class="ds-recent-comments" data-num-items="5" data-show-avatars="1" data-show-time="1" data-show-title="1" data-show-admin="1" data-excerpt-length="70"></div>
+            <!-- 多说最新评论 end -->
+            <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+            <script type="text/javascript">
+                var duoshuoQuery = {short_name:"weberpub"};
+                (function() {
+                    var ds = document.createElement('script');
+                    ds.type = 'text/javascript';ds.async = true;
+                    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+                    ds.charset = 'UTF-8';
+                    (document.getElementsByTagName('head')[0]
+                    || document.getElementsByTagName('body')[0]).appendChild(ds);
+                })();
+            </script>
+            <!-- 多说公共JS代码 end -->
+        </div>
+    </div>
+
+    <div class="pagination center">
+        {$page}
+    </div>
+</div>
+<include file = "./Public/Public_footer"/>
+<include file = "./Public/Public_foot_script"/>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

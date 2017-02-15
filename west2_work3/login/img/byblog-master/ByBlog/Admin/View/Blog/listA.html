@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>文章列表页 -- ByBlog</title>
+    <include file = "./Public/Public_head_link"/>
+</head>
+<body>
+<include file = "./Public/Public_header"/>
+<div id="content" class="container by-lista">
+    <div class="row pt-xlg">
+        <div class="col s12">
+            <table class="hoverable">
+                <thead>
+                <tr>
+                    <th data-field="id" class="f-20">文章标题</th>
+                    <th data-field="id" class="f-20">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <volist name="list" id="vo">
+                        <tr>
+                            <td class="f-18" width="75%">{$vo.a_title} <span class="f-12 c-999">20{$vo.a_time|date="y/m/d H:i",###}</span></td>
+                            <td width="25%">
+                                <a href="{:U('Admin/Blog/edit/id/'.$vo['a_id'])}" class="waves-effect waves-light btn mr-lg">编辑</a>
+                                <a href="#modal{$vo.a_id}" class="modal-trigger waves-effect waves-light btn">删除</a>
+                                <div id="modal{$vo.a_id}" class="modal">
+                                    <div class="modal-content">
+                                        <h4>确定删除</h4>
+                                        <p>{$vo.a_title} 这篇文章？？？？</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a onclick="$('.modal').closeModal();" class="waves-effect waves-light btn ml-lg ">取消</a>
+                                        <a href="{:U('Admin/Blog/del/id/'.$vo['a_id'])}" class="waves-effect waves-light btn red">确定</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </volist>
+                </tbody>
+            </table>
+            <div class="pagination right">
+                {$page}
+            </div>
+        </div>
+    </div>
+</div>
+<include file = "./Public/Public_footer"/>
+<include file = "./Public/Public_foot_script"/>
+<script>
+    $(document).ready(function(){
+        // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+        $('.modal-trigger').leanModal();
+    });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
